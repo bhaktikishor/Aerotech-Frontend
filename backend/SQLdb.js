@@ -4,7 +4,7 @@ const connection = createConnection({
     host: "localhost",
     user: "root",
     password: "Rudransh@23",
-    database: "project",
+    database: "aerotech",
 })
 
 module.exports = connection;

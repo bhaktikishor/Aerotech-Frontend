@@ -30,7 +30,7 @@ const upload = multer({
 
 const find_in_user = async()=>{
     let rows = [];
-    rows = await awaitquery("SELECT * FROM project.user;");
+    rows = await awaitquery("SELECT * FROM aerotech.user;");
     if (rows.length == 0) {
         return "Data not found";
     } else {
@@ -40,7 +40,7 @@ const find_in_user = async()=>{
 
 const find_in_product = async () => {
     rows = []
-    rows = await awaitquery("SELECT * FROM project.product;");
+    rows = await awaitquery("SELECT * FROM aerotech.product;");
     if (rows.length > 0) {
         return rows
     }
@@ -51,7 +51,7 @@ const find_in_product = async () => {
 
 const find_in_product_id = async (id) => {
     rows = []
-    rows = await awaitquery(`SELECT * FROM project.product where product_id = '${id}';`);
+    rows = await awaitquery(`SELECT * FROM aerotech.product where product_id = '${id}';`);
     if (rows.length > 0) {
         return rows
     }
@@ -62,7 +62,7 @@ const find_in_product_id = async (id) => {
 
 const find_in_blog = async()=>{
     let rows = [];
-    rows = await awaitquery("SELECT * FROM project.blog;");
+    rows = await awaitquery("SELECT * FROM aerotech.blog;");
     if (rows.length == 0) {
         return "Data not found";
     } else {
@@ -72,7 +72,7 @@ const find_in_blog = async()=>{
 
 const find_in_blog_id = async()=>{
     let rows = [];
-    rows = await awaitquery(`SELECT * FROM project.blog where blog_id = '${id}';`);
+    rows = await awaitquery(`SELECT * FROM aerotech.blog where blog_id = '${id}';`);
     if (rows.length == 0) {
         return "Data not found";
     } else {
@@ -82,17 +82,17 @@ const find_in_blog_id = async()=>{
 
 const add_user = async(id,name,email,password)=>{
     let rows = [];
-    rows = await awaitquery(`INSERT INTO project.user (user_id, name, email, password) VALUES (${id}, "${name}", "${email}", "${password}");`);
+    rows = await awaitquery(`INSERT INTO aerotech.user (user_id, name, email, password) VALUES (${id}, "${name}", "${email}", "${password}");`);
 }
 
 const add_blog = async(id,blog_title,blog_description,blog_views,blog_comments,blog_image,blog_time)=>{
     let rows = [];
-    rows = await awaitquery(`INSERT INTO project.blog (blog_id, blog_title, blog_description, blog_views, blog_comments, blog_image, blog_time) VALUES (${id}, "${blog_title}", "${blog_description}", ${blog_views}, ${blog_comments}, '${blog_image}','${blog_time}');`);
+    rows = await awaitquery(`INSERT INTO aerotech.blog (blog_id, blog_title, blog_description, blog_views, blog_comments, blog_image, blog_time) VALUES (${id}, "${blog_title}", "${blog_description}", ${blog_views}, ${blog_comments}, '${blog_image}','${blog_time}');`);
 }
 
 const validate_user = async(email,password)=>{
     let rows=[];
-    rows = await awaitquery(`SELECT * FROM project.user where email = '${email}';`)
+    rows = await awaitquery(`SELECT * FROM aerotech.user where email = '${email}';`)
     if (rows.length == 0) {
         return false;
     } else if (rows[0].password == password) {
