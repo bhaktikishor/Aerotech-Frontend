@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/a162850df0.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Company Name</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        #bg-image {
+            background-image: url(/images/homebg.jpg);
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            width: 100%;
+            height: 700px;
+        }
+
+        @media (max-width: 992px) {
+            #bg-image {
+                height: 400px;
+            }
+        }
+
+        @media (max-width: 402px) {
+            #bg-image {
+                height: 300px;
+            }
+        }
+
+        /* Dropdown Button */
+        .dropbtn {
+            background-color: black;
+            color: white;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+            width: 100%;
+        }
+
+        /* The container <div> - needed to position the dropdown content */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        /* Dropdown Content (Hidden by Default) */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #383737;
+            text-align: center;
+            width: 100%;
+            min-width: 100px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        /* Links inside the dropdown */
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        /* Change color of dropdown links on hover */
+        .dropdown-content a:hover,
+        .dropdown-content-home:hover {
+            background-color: #666464;
+        }
+
+        /* Show the dropdown menu on hover */
+        .dropdown:hover .dropdown-content,
+        .dropdown-content-home {
+            display: block;
+        }
+
+        /* Change the background color of the dropdown button when the dropdown content is shown */
+        .dropdown:hover .dropbtn {
+            background-color: rgb(32, 32, 32);
+        }
+
+        /* Search bar */
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .topnav {
+            overflow: hidden;
+            /* background-color: #e9e9e9; */
+        }
+
+        .topnav a {
+            float: left;
+            display: block;
+            color: black;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .topnav a.active {
+            background-color: #2196F3;
+            color: white;
+        }
+
+        .topnav .search-container {
+            display: flex;
+            float: right;
+            width:100vw;
+            justify-content: center;
+        }
+
+        .topnav input[type=text] {
+            padding: 6px;
+            margin-top: 8px;
+            font-size: 17px;
+            border: none;
+        }
+
+        .topnav .search-container button {
+            float: right;
+            padding: 6px 10px;
+            margin-top: 8px;
+            margin-right: 16px;
+            background: #ddd;
+            font-size: 17px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .topnav .search-container button:hover {
+            background: #ccc;
+        }
+
+        @media screen and (max-width: 600px) {
+            /* .topnav .search-container {
+                float: none;
+            }
+
+            .topnav a,
+            .topnav input[type=text],
+            .topnav .search-container button {
+                float: none;
+                display: block;
+                text-align: left;
+                width: 100%;
+                margin: 0px;
+                padding: 14px;
+            }
+
+            .topnav input[type=text] {
+                border: 1px solid #ccc;
+            } */
+            .logo{
+                display: none;
+            }
+        }
+        @media screen and (max-width: 350px) {
+            .search-container form input{
+                width: 100px;
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <div class="container1" style="background-color: black;">
+        <header class="header justify-between">
+            <img src="/images/logo.jpg" alt="Logo" class="logo text-gray-100 rounded m-2  my-auto"
+                style="height: 50px; width: 250px;" />
+            <div class="topnav flex pt-3">
+                <div class="search-container">
+                    <form>
+                        <input type="text" placeholder="Search Category of Drone" name="search">
+                        <button type="submit"><i class="fa fa-search"></i></button>
+                    </form>
+                </div>
+            </div>
+            <nav class="md:ml-auto block items-center justify-center navbar pt-3">
+                <ul class="navbar-list">
+                    <a class="dropdown navbar-link text-gray-100 hover:text-gray-300 no-underline font-sixe-25 center dropdown-content-home mr-5"
+                        style="padding: 16px;" href="/">Home </a>
+                    <div class="dropdown">
+                        <button
+                            class="dropbtn navbar-link mr-10 text-gray-100 hover:text-gray-300 no-underline font-sixe-25">Explore</button>
+                        <div class="dropdown-content">
+                            <a href="/shop.html">Shop</a>
+                            <a href="/service.html">Services</a>
+                            <a href="/drones.html">Our Drones</a>
+                            <a href="/blog.html">Blogs</a>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <button
+                            class="dropbtn navbar-link mr-10 text-gray-100 hover:text-gray-300 no-underline font-sixe-25">Support</button>
+                        <div class="dropdown-content">
+                            <a href="/contact.html">Contact Us</a>
+                            <a href="/about.html">About Us</a>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <button
+                            class="dropbtn navbar-link mr-10 text-gray-100 hover:text-gray-300 no-underline font-sixe-25"><i
+                                class="fa-solid fa-user"></i></button>
+                        <div class="dropdown-content" id="dropdown-content-dynamic">
+                            <a href="/login.html">Log in</a>
+                            <a href="/signup.html">Sign Up</a>
+                            <a onclick="deleteAllCookies()" href="#">Log out</a>
+                        </div>
+                    </div>
+
+                </ul>
+            </nav>
+
+            <div class="mobile-navbar-btn">
+                <ion-icon name="menu-outline" class="mobile-nav-icon" style="color: white;"></ion-icon>
+                <ion-icon name="close-outline" class="mobile-nav-icon" style="color: white;"></ion-icon>
+            </div>
+        </header>
+    </div>
+
+
+    <!-- Footer -->
+    <footer class="text-gray-300 body-font" style="background-color: black;">
+        <div
+            class="container px-5 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
+            <div class="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
+                <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+                    <img src="/images/logo.jpg" alt="Logo" style="height: 50px; width: 300px;" class="rounded">
+            </div>
+            <div class="flex-grow flex flex-wrap md:pl-20 -mb-10 md:mt-0 mt-10 md:text-left text-center">
+                <div class="lg:w-1/2 md:w-1/2 w-full px-4">
+                    <h2 class="title-font font-medium text-gray-100 tracking-widest w-full text-sm mb-4">OUR PAGES</h2>
+                    <nav class="list-none mb-10 bg-black">
+                        <li class="mb-2">
+                            <a class="text-gray-600 hover:text-gray-500 no-underline" href="/">Home</a>
+                        </li>
+                        <li class="mb-2">
+                            <a class="text-gray-600 hover:text-gray-500 no-underline" href="/drones.html">Our Drones</a>
+                        </li>
+                        <li class="mb-2">
+                            <a class="text-gray-600 hover:text-gray-500 no-underline" href="/service.html">Services</a>
+                        </li>
+                        <li class="mb-2">
+                            <a class="text-gray-600 hover:text-gray-500 no-underline" href="/shop.html">Shop</a>
+                        </li>
+                    </nav>
+                </div>
+                <div class="lg:w-1/2 md:w-1/2 w-full px-4">
+                    <h2 class="title-font font-medium text-gray-100 tracking-widest text-sm mb-4">ABOUT US</h2>
+                    <nav class="list-none mb-10 bg-black">
+                        <li class="mb-2">
+                            <a class="text-gray-600 hover:text-gray-500 no-underline"
+                                href="/blog.html">Blog</a>
+                        </li>
+                        <li class="mb-2">
+                            <a class="text-gray-600 hover:text-gray-500 no-underline" href="/contact.html">Contact
+                                Us</a>
+                        </li>
+                        <li class="mb-2">
+                            <a class="text-gray-600 hover:text-gray-500 no-underline" href="/about.html">About Us</a>
+                        </li>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
+                <p class="text-gray-500 text-sm text-center sm:text-left">© 2023 AeroTech Drones —
+                    <a rel="noopener noreferrer" class="text-gray-600 ml-1" target="_blank">@Bhavans</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        const items = document.querySelectorAll('.accordion button');
+
+        function toggleAccordion() {
+            const itemToggle = this.getAttribute('aria-expanded');
+
+            for (i = 0; i < items.length; i++) {
+                items[i].setAttribute('aria-expanded', 'false');
+            }
+
+            if (itemToggle == 'false') {
+                this.setAttribute('aria-expanded', 'true');
+            }
+        }
+
+        items.forEach((item) => item.addEventListener('click', toggleAccordion));
+
+    </script>
+    <script>
+        function getCookie(cname) {
+            let name = cname + "=";
+            let decodedCookie = decodeURIComponent(document.cookie);
+            let ca = decodedCookie.split(';');
+            for (let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+        function deleteAllCookies() {
+            var cookies = document.cookie.split(";");
+            for (var i = 0; i < cookies.length; i++) {
+                var cookie = cookies[i];
+                var eqPos = cookie.indexOf("=");
+                var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+                document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
+            }
+            alert("Logged out...")
+            location.reload();
+        }
+        let email = getCookie("email");
+        if (email != "") {
+            let temp = document.getElementById("dropdown-content-dynamic");
+            // for (let i = 0; i < temp.length; i++) {
+            temp.innerHTML = `<a onclick="deleteAllCookies()" href="#">Log out</a>`;
+            // }
+            // location.reload();
+        } else {
+            let temp = document.getElementById("dropdown-content-dynamic");
+            // for (let i = 0; i < temp.length; i++) {
+            temp.innerHTML = `<a href="/login.html">Log in</a>
+                            <a href="/signup.html">Sign Up</a>`;
+            // }
+            // location.reload();
+        }
+    </script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script src="index.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>

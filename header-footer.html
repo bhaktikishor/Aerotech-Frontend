@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/a162850df0.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Company Name</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        #bg-image {
+            background-image: url(/images/homebg.jpg);
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            width: 100%;
+            height: 700px;
+        }
+
+        @media (max-width: 992px) {
+            #bg-image {
+                height: 400px;
+            }
+        }
+        @media (max-width: 402px) {
+            #bg-image {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <div class="container1" style="background-color: black;">
+        <header class="header pt-1">
+            <img src="/images/logo.jpg" alt="Logo" class="logo text-gray-100 rounded m-2"
+                style="height: 50px; width: 250px;" />
+            <nav class="md:ml-auto block items-center justify-center navbar pt-3">
+                <ul class="navbar-list">
+                    <a class="navbar-link mr-10 text-gray-100 hover:text-gray-300 no-underline font-sixe-25"
+                        href="/">Home </a>
+                    <a class="navbar-link mr-10 text-gray-100 hover:text-gray-300 no-underline font-sixe-25"
+                        href="/drones.html">Our Drones </a>
+                    <a class="navbar-link mr-10 text-gray-100 hover:text-gray-300 no-underline font-sixe-25"
+                        href="/shop.html">Shop </a>
+                    <a class="navbar-link mr-10 text-gray-100 hover:text-gray-300 no-underline font-sixe-25"
+                        href="/service.html">Services </i></a>
+                    <!-- <a class="navbar-link mr-10 text-gray-100 hover:text-gray-300 no-underline font-sixe-25"
+                        href="/blog.html">Blog </a> -->
+                    <a class="navbar-link mr-10 text-gray-100 hover:text-gray-300 no-underline font-sixe-25"
+                        href="/contact.html">Contact Us </a>
+                    <a class="navbar-link mr-10 text-gray-100 hover:text-gray-300 no-underline font-sixe-25"
+                        href="/about.html">About Us</a>
+                </ul>
+            </nav>
+            <div class="mobile-navbar-btn">
+                <ion-icon name="menu-outline" class="mobile-nav-icon" style="color: white;"></ion-icon>
+                <ion-icon name="close-outline" class="mobile-nav-icon" style="color: white;"></ion-icon>
+            </div>
+        </header>
+    </div>
+
+    
+    <!-- Footer -->
+    <footer class="text-gray-300 body-font" style="background-color: black;">
+        <div
+            class="container px-5 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
+            <div class="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
+                <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+                    <img src="/images/logo.jpg" alt="Logo" style="height: 50px; width: 300px;" class="rounded">
+            </div>
+            <div class="flex-grow flex flex-wrap md:pl-20 -mb-10 md:mt-0 mt-10 md:text-left text-center">
+                <div class="lg:w-1/2 md:w-1/2 w-full px-4">
+                    <h2 class="title-font font-medium text-gray-100 tracking-widest w-full text-sm mb-4">OUR PAGES</h2>
+                    <nav class="list-none mb-10 bg-black">
+                        <li class="mb-2">
+                            <a class="text-gray-600 hover:text-gray-500 no-underline" href="/">Home</a>
+                        </li>
+                        <li class="mb-2">
+                            <a class="text-gray-600 hover:text-gray-500 no-underline" href="/drones.html">Our Drones</a>
+                        </li>
+                        <li class="mb-2">
+                            <a class="text-gray-600 hover:text-gray-500 no-underline" href="/service.html">Services</a>
+                        </li>
+                        <li class="mb-2">
+                            <a class="text-gray-600 hover:text-gray-500 no-underline" href="/shop.html">Shop</a>
+                        </li>
+                    </nav>
+                </div>
+                <div class="lg:w-1/2 md:w-1/2 w-full px-4">
+                    <h2 class="title-font font-medium text-gray-100 tracking-widest text-sm mb-4">ABOUT US</h2>
+                    <nav class="list-none mb-10 bg-black">
+                        <li class="mb-2">
+                            <!-- <a class="text-gray-600 hover:text-gray-500 no-underline"
+                                href="/blog.html">Blog</a> -->
+                        </li>
+                        <li class="mb-2">
+                            <a class="text-gray-600 hover:text-gray-500 no-underline" href="/contact.html">Contact
+                                Us</a>
+                        </li>
+                        <li class="mb-2">
+                            <a class="text-gray-600 hover:text-gray-500 no-underline" href="/about.html">About Us</a>
+                        </li>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
+                <p class="text-gray-500 text-sm text-center sm:text-left">© 2023 AeroTech Drones —
+                    <a rel="noopener noreferrer" class="text-gray-600 ml-1" target="_blank">@Bhavans</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        const items = document.querySelectorAll('.accordion button');
+
+        function toggleAccordion() {
+            const itemToggle = this.getAttribute('aria-expanded');
+
+            for (i = 0; i < items.length; i++) {
+                items[i].setAttribute('aria-expanded', 'false');
+            }
+
+            if (itemToggle == 'false') {
+                this.setAttribute('aria-expanded', 'true');
+            }
+        }
+
+        items.forEach((item) => item.addEventListener('click', toggleAccordion));
+
+    </script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script src="index.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>

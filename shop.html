@@ -1,0 +1,1150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a162850df0.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"> -->
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/inter-ui@3.11.0/inter.min.css'>
+    <link rel="stylesheet" href="./dist/style.css">
+    <title>Company Name</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .container2 {
+            position: relative;
+            z-index: -1;
+            width: 100%;
+            margin: auto;
+        }
+
+        .btn-ui {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 13rem;
+            overflow: hidden;
+            height: 3rem;
+            background-size: 300% 300%;
+            backdrop-filter: blur(1rem);
+            border-radius: 5rem;
+            transition: 0.5s;
+            animation: gradient_301 5s ease infinite;
+            border: double 4px transparent;
+            background-image: linear-gradient(#000000, #212121), linear-gradient(137.48deg, #353329 10%, #474545 45%, #696374 67%, #000000 87%);
+            background-origin: border-box;
+            background-clip: content-box, border-box;
+            position: relative;
+            z-index: 0;
+        }
+
+        #container-stars {
+            position: absolute;
+            z-index: -1;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            transition: 0.5s;
+            backdrop-filter: blur(1rem);
+            border-radius: 5rem;
+        }
+
+        strong {
+            z-index: 2;
+            font-family: 'Avalors Personal Use';
+            font-size: 12px;
+            letter-spacing: 2px;
+            color: #FFFFFF;
+            /* text-shadow: 0 0 0px white; */
+        }
+
+        #glow {
+            position: absolute;
+            display: flex;
+            width: 12rem;
+        }
+
+        .circle {
+            width: 100%;
+            height: 30px;
+            filter: blur(2rem);
+            animation: pulse_3011 4s infinite;
+            z-index: -1;
+        }
+
+        .circle:nth-of-type(1) {
+            background: black;
+        }
+
+        .circle:nth-of-type(2) {
+            background: black;
+        }
+
+        .btn-ui #container-stars {
+            z-index: 1;
+            background-color: #212121;
+        }
+
+        .btn-ui {
+            transform: scale(1.1)
+        }
+
+        .btn-ui:active {
+            /* border: double 4px #FE53BB; */
+            background-origin: border-box;
+            background-clip: content-box, border-box;
+            animation: none;
+        }
+
+        #submit-btn {
+            background-color: rgb(48, 50, 51);
+        }
+
+
+        /* .btn:active .circle {
+            background: #FE53BB;
+        } */
+
+        #stars {
+            position: relative;
+            background: transparent;
+            width: 200rem;
+            height: 200rem;
+        }
+
+        #stars::after {
+            content: "";
+            position: absolute;
+            top: -10rem;
+            left: -100rem;
+            width: 100%;
+            height: 100%;
+            animation: animStarRotate 90s linear infinite;
+        }
+
+        #stars::after {
+            background-image: radial-gradient(#ffffff 1px, transparent 1%);
+            background-size: 50px 50px;
+        }
+
+        #submit-btn {
+            background-color: rgb(48, 50, 51);
+        }
+
+
+        #stars::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -50%;
+            width: 170%;
+            height: 500%;
+            animation: animStar 60s linear infinite;
+        }
+
+        #stars::before {
+            background-image: radial-gradient(#ffffff 1px, transparent 1%);
+            background-size: 50px 50px;
+            opacity: 0.5;
+        }
+
+        @keyframes animStar {
+            from {
+                transform: translateY(0);
+            }
+
+            to {
+                transform: translateY(-135rem);
+            }
+        }
+
+        @keyframes animStarRotate {
+            from {
+                transform: rotate(360deg);
+            }
+
+            to {
+                transform: rotate(0);
+            }
+        }
+
+        @keyframes gradient_301 {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        @keyframes pulse_3011 {
+            0% {
+                transform: scale(0.75);
+                box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+            }
+
+            70% {
+                transform: scale(1);
+                box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+            }
+
+            100% {
+                transform: scale(0.75);
+                box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+            }
+        }
+
+        /* Flip card css */
+        .flip-card {
+            background-color: transparent;
+            width: 300px;
+            height: 400px;
+            perspective: 1000px;
+            font-family: sans-serif;
+            /* position: relative;
+            z-index: -1; */
+        }
+
+        .title {
+            font-size: 1.5em;
+            font-weight: 900;
+            text-align: center;
+            margin: 0;
+        }
+
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+        }
+
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .flip-card-front,
+        .flip-card-back {
+            box-shadow: 0 8px 14px 0 rgba(0, 0, 0, 0.2);
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            border: 1px solid coral;
+            border-radius: 1rem;
+        }
+
+        .flip-card-front {
+            background: linear-gradient(120deg, bisque 60%, rgb(255, 231, 222) 88%,
+                    rgb(255, 211, 195) 40%, rgba(255, 127, 80, 0.603) 48%);
+            color: coral;
+        }
+
+        .flip-card-back {
+            background: linear-gradient(120deg, rgb(49, 47, 47) 30%, rgb(29, 27, 26) 88%,
+                    bisque 40%, rgb(51, 51, 51) 78%);
+            color: white;
+            transform: rotateY(180deg);
+        }
+
+        .shop-drone-img {
+            height: 65%;
+            width: 100%;
+            border-top-left-radius: 17px;
+            border-top-right-radius: 17px;
+        }
+
+        /* Modal style */
+        .Modal {
+            display: block;
+            position: fixed;
+            left: 0;
+            top: 0;
+            z-index: 9999;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            background-color: rgba(0, 0, 0, 0.4);
+            -webkit-transition: 0.5s;
+            overflow: auto;
+            transition: all 0.3s linear;
+        }
+
+        .Modal-content {
+            /* background-color: white; */
+            margin: auto;
+            /* padding: 20px; */
+            border-radius: 4px;
+            max-width: 300px;
+            height: auto;
+        }
+
+        .ModalOpen {
+            overflow: hidden;
+        }
+
+        .is-hidden {
+            display: none;
+        }
+
+        .is-visuallyHidden {
+            opacity: 0;
+        }
+
+        .Close {
+            color: #aaaaaa;
+            float: right;
+            font-size: 25px;
+            position: relative;
+            left: 85px;
+            top: 37px;
+            z-index: 100000;
+        }
+
+        .Close:hover,
+        .Close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* Content blur */
+
+        .is-blurred {
+            filter: blur(2px);
+            -webkit-filter: blur(2px);
+        }
+
+        /* Checkout Page */
+        /* Body */
+        .container-co {
+            display: grid;
+            grid-template-columns: auto;
+            gap: 0px;
+        }
+
+        hr {
+            height: 1px;
+            background-color: rgba(16, 86, 82, .75);
+            ;
+            border: none;
+        }
+
+        .card {
+            width: 400px;
+            background: #2c2c2c;
+            box-shadow: 0px 187px 75px rgba(0, 0, 0, 0.01), 0px 105px 63px rgba(0, 0, 0, 0.05), 0px 47px 47px rgba(0, 0, 0, 0.09), 0px 12px 26px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1);
+        }
+
+        .title {
+            width: 100%;
+            height: 40px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            padding-left: 20px;
+            border-bottom: 1px solid rgba(16, 86, 82, .75);
+            font-weight: 700;
+            font-size: 18px;
+            color: white;
+        }
+
+        /* Cart */
+        .cart {
+            border-radius: 19px 19px 0px 0px;
+        }
+
+        .cart .steps {
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        .cart .steps .step {
+            display: grid;
+            gap: 10px;
+        }
+
+        .cart .steps .step span {
+            font-size: 13px;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .cart .steps .step p {
+            font-size: 11px;
+            font-weight: 600;
+            color: #000000;
+        }
+
+        /* Promo */
+        .promo form {
+            display: grid;
+            grid-template-columns: 1fr 80px;
+            gap: 10px;
+            padding: 0px;
+        }
+
+        .input_field {
+            width: 100%;
+            height: 36px;
+            padding: 0 0 0 12px;
+            color: #fff;
+            border-radius: 5px;
+            outline: none;
+            border: 1px solid rgb(115, 125, 125);
+            background-color: black;
+            transition: all 0.3s cubic-bezier(0.15, 0.83, 0.66, 1);
+        }
+
+        .input_field:focus {
+            border: 1px solid transparent;
+            /* box-shadow: 0px 0px 0px 2px rgb(251, 243, 228); */
+            background-color: black;
+        }
+
+        .promo form button {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            padding: 10px 18px;
+            gap: 10px;
+            width: 100%;
+            height: 36px;
+            background: rgba(16, 86, 82, .75);
+            box-shadow: 0px 0.5px 0.5px #F3D2C9, 0px 1px 0.5px rgba(239, 239, 239, 0.5);
+            border-radius: 5px;
+            border: 0;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 12px;
+            line-height: 15px;
+            color: #000000;
+        }
+
+        .form-check-label {
+            color: #cecece;
+        }
+
+        /* Checkout */
+        .payments .details {
+            display: grid;
+            grid-template-columns: 10fr 1fr;
+            padding: 0px;
+            gap: 5px;
+        }
+
+        .payments .details span:nth-child(odd) {
+            font-size: 12px;
+            font-weight: 600;
+            color: white;
+            margin: auto auto auto 0;
+        }
+
+        .payments .details span:nth-child(even) {
+            font-size: 13px;
+            font-weight: 600;
+            color: #ffffff;
+            margin: auto 0 auto auto;
+        }
+
+        .checkout .footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 10px 10px 20px;
+            background-color: #111111;
+        }
+
+        .price {
+            position: relative;
+            font-size: 22px;
+            color: #ffffff;
+            font-weight: 900;
+        }
+
+        .checkout .checkout-btn {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            width: 150px;
+            height: 36px;
+            /* background: rgba(16, 86, 82, .55); */
+            /* box-shadow: 0px 0.5px 0.5px rgba(16, 86, 82, .75), 0px 1px 0.5px rgba(16, 86, 82, .75); */
+            border-radius: 7px;
+            /* border: 1px solid rgb(16, 86, 82); */
+            /* color: #000000; */
+            font-size: 13px;
+            font-weight: 600;
+            transition: all 0.3s cubic-bezier(0.15, 0.83, 0.66, 1);
+        }
+
+        @media screen and (max-width: 600px) {
+            .logo {
+                display: none;
+            }
+        }
+        *{
+            font-style: ;
+        }
+    </style>
+</head>
+
+<body onload="chechCookie()">
+    <!-- Navbar -->
+    <div class="container1" style="background-color: black;">
+        <header class="header justify-between">
+            <img src="/images/logo.jpg" alt="Logo" class="logo text-gray-100 rounded m-2  my-auto"
+                style="height: 50px; width: 250px;" />
+            <div class="topnav flex pt-3">
+                <div class="search-container">
+                    <form>
+                        <input type="text" placeholder="Search name or category" name="search" onkeyup="searchFunc()"
+                            id="searchInput">
+                        <button type="submit"><i class="fa fa-search"></i></button>
+                    </form>
+                </div>
+            </div>
+            <nav class="md:ml-auto block items-center justify-center navbar pt-3">
+                <ul class="navbar-list">
+                    <a class="dropdown navbar-link text-gray-100 hover:text-gray-300 no-underline font-sixe-25 center dropdown-content-home mr-5"
+                        style="padding: 16px;" href="/">Home </a>
+                    <div class="dropdown">
+                        <button
+                            class="dropbtn navbar-link mr-10 text-gray-100 hover:text-gray-300 no-underline font-sixe-25">Explore</button>
+                        <div class="dropdown-content">
+                            <a href="/shop.html">Shop</a>
+                            <a href="/service.html">Services</a>
+                            <a href="/drones.html">Our Drones</a>
+                            <a href="/blog.html">Blogs</a>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <button
+                            class="dropbtn navbar-link mr-10 text-gray-100 hover:text-gray-300 no-underline font-sixe-25">Support</button>
+                        <div class="dropdown-content">
+                            <a href="/contact.html">Contact Us</a>
+                            <a href="/about.html">About Us</a>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <button
+                            class="dropbtn navbar-link mr-10 text-gray-100 hover:text-gray-300 no-underline font-sixe-25"><i
+                                class="fa-solid fa-user"></i></button>
+                        <div class="dropdown-content" id="dropdown-content-dynamic">
+                            <a href="/login.html">Log in</a>
+                            <a href="/signup.html">Sign Up</a>
+                            <a onclick="deleteAllCookies()" href="#">Log out</a>
+                        </div>
+                    </div>
+
+                </ul>
+            </nav>
+
+            <div class="mobile-navbar-btn" onclick="func1()">
+                <ion-icon name="menu-outline" class="mobile-nav-icon" style="color: white;"></ion-icon>
+                <ion-icon name="close-outline" class="mobile-nav-icon" style="color: white;"></ion-icon>
+            </div>
+        </header>
+    </div>
+    <div>
+        <button onclick="topFunction()" id="myBtn" title="Go to top" class="btn btn-dark"><i
+                class="fa-solid fa-up-long "></i></button>
+    </div>
+    <div id="myModal" class="Modal is-hidden is-visuallyHidden">
+        <!-- Modal content -->
+        <div class="Modal-content">
+            <span id="closeModal" class="Close">&times;</span>
+            <div class="">
+                <div class="card cart">
+                    <label class="title">CHECKOUT</label>
+                    <div class="steps">
+                        <div class="step">
+                            <div class="promo">
+                                <span>SHIPPING DETAILS</span>
+                                <form class="form">
+                                    <input type="text" placeholder="Enter your delivery address" id="address"
+                                        class="input_field" style="width: 100%;"><br>
+                                    <input type="text" placeholder="Enter your Phone Number" name="phone"
+                                        id="phonenumber" class="input_field" style="width: 100%;"><br>
+                                    <input type="email" placeholder="Enter your Email Address" name="email" id="emailid"
+                                        class="input_field" style="width: 100%;">
+                                </form>
+                            </div>
+                            <hr>
+                            <div>
+                                <span>PAYMENT METHOD</span>
+                                <div>
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                        id="flexRadioDefault2" checked>
+                                    <label class="form-check-label" for="flexRadioDefault2">
+                                        Cash on Delivery
+                                    </label>
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                        id="flexRadioDefault1">
+                                    <label class="form-check-label" for="flexRadioDefault1">
+                                        Online UPI
+                                    </label>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="payments">
+                                <span>PAYMENT</span>
+                                <div class="details">
+                                    <span>Subtotal:</span>
+                                    <span id="product_price">&#8377;240.00</span>
+                                    <span>Shipping:</span>
+                                    <span>Free</span>
+                                    <span>Tax:</span>
+                                    <span id="product_tax">&#8377;30.40</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <span id="product_id" style="display: none;"></span>
+                </div>
+
+                <div class="card checkout">
+                    <div class="footer">
+                        <label class="price" id="product_total">&#8377;280.40</label>
+                        <div id="reset-truck">
+                            <button class="checkout-btn truck-button" onclick="finalcheck()">
+                                <span class="default">Complete Order</span>
+                                <span class="success">
+                                    Order Placed
+                                    <svg viewbox="0 0 12 10">
+                                        <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                                    </svg>
+                                </span>
+                                <div class="truck">
+                                    <div class="wheel"></div>
+                                    <div class="back"></div>
+                                    <div class="front"></div>
+                                    <div class="box"></div>
+                                </div>
+                            </button>
+                        </div>
+                        <!-- <button class="checkout-btn btn btn-dark" onclick="finalcheck()">Checkout</button> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- part-1 -->
+    <div class="container2 text-center w-full my-5">
+        <button class="btn-ui m-auto" type="button">
+            <strong class="text-lg">SHOP</strong>
+            <div id="container-stars">
+                <div id="stars"></div>
+            </div>
+
+            <div id="glow">
+                <div class="circle"></div>
+                <div class="circle"></div>
+            </div>
+        </button>
+    </div>
+
+    <div id="myContainer">
+        <div class="justify-around mb-5">
+            <div class="flex justify-around flex-wrap my-5" id="dynamic-content">
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-gray-300 body-font" style="background-color: black;">
+        <div
+            class="container px-5 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
+            <div class="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
+                <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+                    <img src="/images/logo.jpg" alt="Logo" style="height: 50px; width: 300px;" class="rounded">
+            </div>
+            <div class="flex-grow flex flex-wrap md:pl-20 -mb-10 md:mt-0 mt-10 md:text-left text-center">
+                <div class="lg:w-1/2 md:w-1/2 w-full px-4">
+                    <h2 class="title-font font-medium text-gray-100 tracking-widest w-full text-sm mb-4">OUR PAGES</h2>
+                    <nav class="list-none mb-10 bg-black">
+                        <li class="mb-2">
+                            <a class="text-gray-600 hover:text-gray-500 no-underline" href="/">Home</a>
+                        </li>
+                        <li class="mb-2">
+                            <a class="text-gray-600 hover:text-gray-500 no-underline" href="/drones.html">Our Drones</a>
+                        </li>
+                        <li class="mb-2">
+                            <a class="text-gray-600 hover:text-gray-500 no-underline" href="/service.html">Services</a>
+                        </li>
+                        <li class="mb-2">
+                            <a class="text-gray-600 hover:text-gray-500 no-underline" href="/shop.html">Shop</a>
+                        </li>
+                    </nav>
+                </div>
+                <div class="lg:w-1/2 md:w-1/2 w-full px-4">
+                    <h2 class="title-font font-medium text-gray-100 tracking-widest text-sm mb-4">ABOUT US</h2>
+                    <nav class="list-none mb-10 bg-black">
+                        <li class="mb-2">
+                            <a class="text-gray-600 hover:text-gray-500 no-underline" href="/blog.html">Blog</a>
+                        </li>
+                        <li class="mb-2">
+                            <a class="text-gray-600 hover:text-gray-500 no-underline" href="/contact.html">Contact
+                                Us</a>
+                        </li>
+                        <li class="mb-2">
+                            <a class="text-gray-600 hover:text-gray-500 no-underline" href="/about.html">About Us</a>
+                        </li>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
+                <p class="text-gray-500 text-sm text-center sm:text-left">© 2023 AeroTech Drones —
+                    <a rel="noopener noreferrer" class="text-gray-600 ml-1" target="_blank">@Bhavans</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script src="index.js"></script>
+    <script>
+        // const mobile_nav = document.querySelector(".mobile-navbar-btn");
+        // const nav_header = document.querySelector(".header");
+        function func1() {
+            let arr = document.getElementsByClassName('flip-card')
+            for (let i = 0; i < arr.length; i++) {
+                arr[i].style.cssText = 'position:relative;z-index:-1;';
+            }
+        }
+        function func2() {
+            let arr = document.getElementsByClassName('flip-card')
+            for (let i = 0; i < arr.length; i++) {
+                arr[i].style.removeProperty("position");
+                arr[i].style.removeProperty("z-index");
+            }
+        }
+        async function finalcheck() {
+            let address = document.getElementById("address").value;
+            let phonenumber = document.getElementById("phonenumber").value;
+            let emailid = document.getElementById("emailid").value;
+            if (address == "") {
+                alert("Please enter your delivery address")
+                return
+            }
+            if (phonenumber.length != 10 || isNaN(phonenumber)) {
+                alert("Please enter valid phone number")
+                return
+            }
+            if (!ValidateEmail(emailid)) {
+                alert("Please enter valid Email Id")
+                return
+            }
+            let id = document.getElementById("product_id").innerText
+            sendMail(id, emailid);
+            await start_animation();
+            setTimeout(function () { sendmessage(address, phonenumber, emailid) }, 6000);
+            // alert(`Dear Customer,\n\nYour order is recorded we will contact you soon\nDelivery Address :- ${address}\nPhone Number :- ${phonenumber}\nE-mail Id :- ${emailid}\n\nYour Product will reach you soon`);
+            // var modal = document.getElementById('myModal');
+            // var container = document.getElementById('myContainer');
+            // address.innerText = ""
+            // address.phonenumber = ""
+            // address.emailid = ""
+            // modal.className = "Modal is-hidden is-visuallyHidden";
+            // body.className = "";
+            // container.className = "MainContainer";
+            // container.parentElement.className = "";
+        }
+        function sendmessage(address, phonenumber, emailid) {
+            alert(`Dear Customer,\n\nYour order is recorded we will contact you soon\nDelivery Address :- ${address}\nPhone Number :- ${phonenumber}\nE-mail Id :- ${emailid}\n\nYour Product will reach you soon`);
+            var modal = document.getElementById('myModal');
+            var container = document.getElementById('myContainer');
+            document.getElementById("address").value = "";
+            document.getElementById("phonenumber").value = "";
+            document.getElementById("emailid").value = "";
+            modal.className = "Modal is-hidden is-visuallyHidden";
+            body.className = "";
+            container.className = "MainContainer";
+            container.parentElement.className = "";
+            document.getElementById("reset-truck").innerHTML = `<button class="checkout-btn truck-button" onclick="finalcheck()">
+<span class="default">Complete Order</span>
+<span class="success">
+    Order Placed
+    <svg viewbox="0 0 12 10">
+        <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+    </svg>
+</span>
+<div class="truck">
+    <div class="wheel"></div>
+    <div class="back"></div>
+    <div class="front"></div>
+    <div class="box"></div>
+</div>
+</button>`
+        }
+        function ValidateEmail(input) {
+            var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+            if (input.match(validRegex)) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        function sendMail(id, emailid) {
+            fetch(`http://localhost:3100/getDataUsingId?id=${id}`)
+                .then(res => {
+                    return res.json();
+                })
+                .then(data => {
+                    for (let i = 0; i < data.length; i++) {
+                        let msg = `This mail is to acknowledge that your order is comfirmed on <b>AeroTech Drones Pvt. Ltd.</b> <br><br>Product Details :- <br>Name :- <i>${data[i].product_name}</i><br>Price :- <i>${data[i].product_price}</i><br>Category :- <i>${data[i].product_category}</i><br>Description :- <i>${data[i].product_description}</i><br><br>Your product will reach you within 24 hrs<br><br>Thank You<br><br>From <b>AeroTech Drones Pvt. Ltd.</b>`;
+                        Email.send({
+                            Host: "smtp.elasticemail.com",
+                            Username: "jdarshan535@gmail.com",
+                            Password: "5AD666C38FF8083C203B9A079C5DD5B65388",
+                            To: emailid,
+                            From: "jdarshan535@gmail.com",
+                            Subject: "AeroTech Drones Pvt. Ltd.",
+                            Body: msg
+                        }).then(
+                            message => {
+                                if (message == 'OK') {
+                                } else {
+                                }
+                            }
+                        );
+                    }
+                })
+                .catch(error => console.log(error))
+        }
+    </script>
+    <script>
+        const myTimeout = setTimeout(chechCookie, 2000);
+        function getCookie(cname) {
+            let name = cname + "=";
+            let decodedCookie = decodeURIComponent(document.cookie);
+            let ca = decodedCookie.split(';');
+            for (let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+        function chechCookie() {
+            let email = getCookie("email");
+            if (email != "") {
+            } else {
+                let btn_arr = document.getElementsByClassName("btn-disable-flag");
+                for (let i = 0; i < btn_arr.length; i++) {
+                    btn_arr[i].classList.add("btn-disable");
+                }
+            }
+        }
+    </script>
+    <script>
+        let shopdata;
+        fetch('http://localhost:3100/getData')
+            .then(res => {
+                return res.json();
+            })
+            .then(data => {
+                // console.log(data);
+                shopdata = data;
+                let markup = "";
+                for (let i = 0; i < data.length; i++) {
+                    markup = markup + `<div class="mx-2 my-4">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="${data[i].product_image}" alt="drone" width="100%" class="shop-drone-img">
+                                <div class="box rounded-b-2xl" style="height: 35%; background-color: #212121;">
+                                    <section class="text-gray-600 body-font overflow-hidden">
+                                        <div class="container-co">
+                                            <div class="w-full mx-auto flex flex-wrap">
+                                                <div class="w-full">
+                                                    <h2 class="text-sm title-font text-gray-500 tracking-widest mt-3">
+                                                        ${data[i].product_category}
+                                                    </h2>
+                                                    <h1 class="text-gray-100 text-xl title-font font-medium">${data[i].product_name}</h1>
+                                                    <div class="flex my-4 mx-3">
+                                                        <p
+                                                            class="w-full m-auto border-gray-200 text-white text-2xl">&#8377;${data[i].product_price}
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </div>
+                                <div>
+                                </div>
+                            </div>
+                            <div class="flip-card-back">
+                                <section class="text-gray-600 body-font overflow-hidden">
+                                    <div class="container mx-auto">
+                                        <div class="mx-auto flex flex-wrap">
+                                            <div class="w-full">
+                                                <h2 class="text-lg title-font text-gray-100 tracking-widest">${data[i].product_name}
+                                                </h2>
+                                                <h1 class="text-gray-300 text-base mb-1">${data[i].product_category}</h1>
+                                                <p class="text-gray-400 text-xs text-left mt-10">Description:-</p>
+                                                <p class="text-sm text-gray-200">${data[i].product_description}</p>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center w-full mt-3">
+                        <button class="btn-ui btn-disable-flag m-auto" type="button" id="a${data[i].product_id}" onclick="checkout(${data[i].product_id})">
+                            <strong class="text-lg"><i class="fa-solid fa-cart-shopping"></i> Buy Now</strong>
+                            <div id="container-stars">
+                                <div id=""></div>
+                            </div>
+
+                            <div id="glow glow-shop">
+                                <div class="circle"></div>
+                                <div class="circle"></div>
+                            </div>
+                        </button>
+                    </div>
+                </div> `
+                    document.getElementById("dynamic-content").innerHTML = markup;
+                }
+            })
+            .catch(error => console.log(error))
+    </script>
+    <script src='https://cdn.jsdelivr.net/npm/gsap@3.0.1/dist/gsap.min.js'></script>
+    <script src="./dist/script.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script>
+        var modal = document.getElementById('myModal');
+        var container = document.getElementById('myContainer');
+        var body = document.getElementsByTagName('body');
+        var btnOpen = document.getElementsByClassName("myBtn");
+        var btnClose = document.getElementById("closeModal");
+
+        function checkout(id) {
+            let ele_id = "a" + id
+            let myElement = document.getElementById(ele_id);
+            console.log(myElement)
+            if (myElement.classList.contains("btn-disable")) {
+                alert("Please Login!! \n\nOnly registered user can Buy...")
+            } else {
+                fetch(`http://localhost:3100/getDataUsingId?id=${id}`)
+                    .then(res => {
+                        return res.json();
+                    })
+                    .then(data => {
+                        for (let i = 0; i < data.length; i++) {
+                            let product_price = data[i].product_price;
+                            let tax = product_price * 6 / 100;
+                            let total = product_price + tax;
+                            document.getElementById("product_price").innerHTML = "&#8377;" + data[i].product_price;
+                            document.getElementById("product_tax").innerHTML = "&#8377;" + tax;
+                            document.getElementById("product_total").innerHTML = "&#8377;" + total;
+                            document.getElementById("product_id").innerHTML = data[i].product_id;
+                        }
+                    })
+                    .catch(error => console.log(error))
+                modal.className = "Modal is-visuallyHidden";
+                setTimeout(function () {
+                    container.className = "MainContainer is-blurred";
+                    modal.className = "Modal";
+                }, 100);
+                container.parentElement.className = "ModalOpen";
+            }
+        }
+        // Close the modal
+        btnClose.onclick = function () {
+            modal.className = "Modal is-hidden is-visuallyHidden";
+            body.className = "";
+            container.className = "MainContainer";
+            container.parentElement.className = "";
+        }
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.className = "Modal is-hidden";
+                body.className = "";
+                container.className = "MainContainer";
+                container.parentElement.className = "";
+            }
+        }
+    </script>
+    <script>
+        function getCookie(cname) {
+            let name = cname + "=";
+            let decodedCookie = decodeURIComponent(document.cookie);
+            let ca = decodedCookie.split(';');
+            for (let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+        function deleteAllCookies() {
+            var cookies = document.cookie.split(";");
+            for (var i = 0; i < cookies.length; i++) {
+                var cookie = cookies[i];
+                var eqPos = cookie.indexOf("=");
+                var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+                document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
+            }
+            alert("Logged out...")
+            location.reload();
+        }
+        let email = getCookie("email");
+        if (email != "") {
+            let temp = document.getElementById("dropdown-content-dynamic");
+            // for (let i = 0; i < temp.length; i++) {
+            temp.innerHTML = `<a onclick="deleteAllCookies()" href="#">Log out</a>`;
+            // }
+            // location.reload();
+        } else {
+            let temp = document.getElementById("dropdown-content-dynamic");
+            // for (let i = 0; i < temp.length; i++) {
+            temp.innerHTML = `<a href="/login.html">Log in</a>
+                            <a href="/signup.html">Sign Up</a>`;
+            // }
+            // location.reload();
+        }
+    </script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+        const searchFunc = () => {
+            let filter = document.getElementById("searchInput").value.toUpperCase();
+            console.log(filter)
+            let display_content = document.getElementById("dynamic-content");
+            let search_html = ``;
+            for (let i = 0; i < shopdata.length; i++) {
+                let shop_item = shopdata[i].product_name;
+                if (shop_item.toUpperCase().indexOf(filter) > -1) {
+                    search_html = search_html + `<div class="mx-2 my-4">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="${shopdata[i].product_image}" alt="drone" width="100%" class="shop-drone-img">
+                                <div class="box rounded-b-2xl" style="height: 35%; background-color: #212121;">
+                                    <section class="text-gray-600 body-font overflow-hidden">
+                                        <div class="container-co">
+                                            <div class="w-full mx-auto flex flex-wrap">
+                                                <div class="w-full">
+                                                    <h2 class="text-sm title-font text-gray-500 tracking-widest mt-3">
+                                                        ${shopdata[i].product_category}
+                                                    </h2>
+                                                    <h1 class="text-gray-100 text-xl title-font font-medium">${shopdata[i].product_name}</h1>
+                                                    <div class="flex my-4 mx-3">
+                                                        <p
+                                                            class="w-full m-auto border-gray-200 text-white text-2xl">&#8377;${shopdata[i].product_price}
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </div>
+                                <div>
+                                </div>
+                            </div>
+                            <div class="flip-card-back">
+                                <section class="text-gray-600 body-font overflow-hidden">
+                                    <div class="container mx-auto">
+                                        <div class="mx-auto flex flex-wrap">
+                                            <div class="w-full">
+                                                <h2 class="text-lg title-font text-gray-100 tracking-widest">${shopdata[i].product_name}
+                                                </h2>
+                                                <h1 class="text-gray-300 text-base mb-1">${shopdata[i].product_category}</h1>
+                                                <p class="text-gray-400 text-xs text-left mt-10">Description:-</p>
+                                                <p class="text-sm text-gray-200">${shopdata[i].product_description}</p>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center w-full mt-3">
+                        <button class="btn-ui btn-disable-flag m-auto" type="button" id="a${shopdata[i].product_id}" onclick="checkout(${shopdata[i].product_id})">
+                            <strong class="text-lg"><i class="fa-solid fa-cart-shopping"></i> Buy Now</strong>
+                            <div id="container-stars">
+                                <div id=""></div>
+                            </div>
+
+                            <div id="glow glow-shop">
+                                <div class="circle"></div>
+                                <div class="circle"></div>
+                            </div>
+                        </button>
+                    </div>
+                </div> `
+                }
+                else {
+                    search_html = search_html + ""
+                }
+            }
+            if (search_html == "") {
+                document.getElementById("dynamic-content").innerHTML = "<p class='text-gray-300'>No such drone available for sale</p>";
+            } else {
+                document.getElementById("dynamic-content").innerHTML = search_html;
+            }
+        }
+    </script>
+    <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
+    <script>
+        window.botpressWebChat.init({
+            "composerPlaceholder": "Enter your query",
+            "botConversationDescription": "This bot is to assist you",
+            "botId": "7e237e28-b00f-4f62-8ebf-62ce53706e12",
+            "hostUrl": "https://cdn.botpress.cloud/webchat/v1",
+            "messagingUrl": "https://messaging.botpress.cloud",
+            "clientId": "7e237e28-b00f-4f62-8ebf-62ce53706e12",
+            "webhookId": "2983438f-351d-4487-b734-7107709bf126",
+            "lazySocket": true,
+            "themeName": "prism",
+            "botName": "AeroTech Drone",
+            "avatarUrl": "https://png.pngtree.com/png-vector/20230225/ourmid/pngtree-smart-chatbot-cartoon-clipart-png-image_6620453.png",
+            "stylesheet": "https://webchat-styler-css.botpress.app/prod/b4e925eb-39e8-454c-8035-70a1dee4c77a/v46270/style.css",
+            "frontendVersion": "v1",
+            "enableConversationDeletion": true,
+            "theme": "prism",
+            "themeColor": "#2563eb"
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,22 @@
+Welcome to AeroTech Drones! Founder of AeroTech Drone is Joe Doe. We are passionate about the
+                    incredible world of drones.Our mission is to provide enthusiasts,professonals,and curious minds with
+                    the latest in drone technology,news, and resources.
+                    Explore the skies with us as we guide you through the thrilling possibilities of aerial
+                    innovation.<br><br>We are delighted to present to you a project hat has been meticulously crafted
+                    with unwavering dedication and extensive research on drone technology.Our aim is to provide you with
+                    valuable insights into this powerful gadget,which not only hold significant advantages in
+                    agriculture and photography but also extends its benefits to various other sectors,catering to a
+                    diverse range of consumers.<br.<br>
+
+                        We trust that we have met all your expectaions and sufficiently addressed the intricacies of
+                        drone technology.We hope that you find this both informative and enjoyable,and that you share in
+                        our enthusiasm for the advancements this technology brings.we look forward to your engagement
+                        and feedback.
+
+1) Search bar remove in all page
+2) Service page search bar
+3) AeroTech Details Text file index
+4) Payment Gateway Integration
+5) Home Page search functionality
+6) Add category to name in database
+7) Website responsive

@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a162850df0.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Company Name</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Form code */
+
+        .container2 {
+            width: 350px;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            border-radius: 3px;
+            border: 1px solid #000000;
+            border-radius: 10px;
+            background: linear-gradient(to right, rgb(77, 81, 84), rgb(77, 81, 84));
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        }
+
+        .container2 form .descr {
+            font-size: 20px;
+            font-weight: 500;
+            color: #e8e8e8;
+            margin-bottom: 25px;
+            margin-top: 25px;
+            text-align: center;
+        }
+
+        .form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .input,
+        textarea {
+            margin: 1em 0 1em 0;
+            width: 300px;
+            position: relative;
+        }
+
+        .input input,
+        textarea {
+            font-size: 100%;
+            padding: 0.7em;
+            outline: none;
+            color: #e8e8e8;
+            border: none;
+            border-bottom: 2px solid #e8e8e8;
+            background: transparent;
+            border-radius: none;
+            width: 100%;
+            resize: none;
+        }
+
+        .input label {
+            font-size: 100%;
+            position: absolute;
+            left: 0;
+            color: #e8e8e8;
+            padding: 0.7em;
+            margin-left: 0.1em;
+            pointer-events: none;
+            transition: all 0.5s ease;
+            text-transform: uppercase;
+        }
+
+        .input :is(input:focus, input:valid)~label {
+            transform: translateY(-50%) scale(.9);
+            margin: 0em;
+            padding: 0.4em;
+            background: transparent;
+        }
+
+        .input textarea:focus~label,
+        .input textarea:valid~label {
+            transform: translateY(-50%) scale(.9);
+            margin: 0em;
+            padding: 0.4em;
+            background: transparent;
+        }
+
+        .inputGroup :is(input:focus, input:valid) {
+            border-color: rgb(37, 37, 211);
+        }
+
+        .form button {
+            color: #e8e8e8;
+            font-size: 15px;
+            align-self: flex-start;
+            padding: 0.6em;
+            border: none;
+            cursor: pointer;
+            margin-bottom: 50px;
+            /* background: transparent; */
+            transition: all 0.3s ease-in-out;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .form button:before {
+            content: "";
+            position: absolute;
+            bottom: 100%;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #e8e8e8;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .form button:hover:before {
+            opacity: 0.2;
+        }
+
+        .form button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Contact us btn css */
+        .width-100-margin-auto {
+            width: 100%;
+            margin: auto;
+        }
+
+        .container3 {
+            position: relative;
+            z-index: -1;
+            width: 100%;
+            margin: auto;
+        }
+
+        .btn-ui {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 13rem;
+            overflow: hidden;
+            height: 3rem;
+            background-size: 300% 300%;
+            backdrop-filter: blur(1rem);
+            border-radius: 5rem;
+            transition: 0.5s;
+            animation: gradient_301 5s ease infinite;
+            border: double 4px transparent;
+            background-image: linear-gradient(#000000, #212121), linear-gradient(137.48deg, #353329 10%, #474545 45%, #696374 67%, #000000 87%);
+            background-origin: border-box;
+            background-clip: content-box, border-box;
+            position: relative;
+            z-index: 0;
+        }
+
+        #container-stars {
+            position: absolute;
+            z-index: -1;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            transition: 0.5s;
+            backdrop-filter: blur(1rem);
+            border-radius: 5rem;
+        }
+
+        strong {
+            z-index: 2;
+            font-family: 'Avalors Personal Use';
+            font-size: 12px;
+            letter-spacing: 2px;
+            color: #FFFFFF;
+            /* text-shadow: 0 0 4px white; */
+        }
+
+        #glow {
+            position: absolute;
+            display: flex;
+            width: 12rem;
+        }
+
+        .circle {
+            width: 100%;
+            height: 30px;
+            filter: blur(2rem);
+            animation: pulse_3011 4s infinite;
+            z-index: -1;
+        }
+
+        .circle:nth-of-type(1) {
+            background: black;
+        }
+
+        .circle:nth-of-type(2) {
+            background: black;
+        }
+
+        .btn-ui:hover #container-stars {
+            z-index: 1;
+            background-color: #212121;
+        }
+
+        .btn-ui:hover {
+            transform: scale(1.1)
+        }
+
+        .btn-ui:active {
+            /* border: double 4px #FE53BB; */
+            background-origin: border-box;
+            background-clip: content-box, border-box;
+            animation: none;
+        }
+
+        #submit-btn:hover {
+            background-color: rgb(48, 50, 51);
+        }
+
+
+        /* .btn:active .circle {
+            background: #FE53BB;
+        } */
+
+        #stars {
+            position: relative;
+            background: transparent;
+            width: 200rem;
+            height: 200rem;
+        }
+
+        #stars::after {
+            content: "";
+            position: absolute;
+            top: -10rem;
+            left: -100rem;
+            width: 100%;
+            height: 100%;
+            animation: animStarRotate 90s linear infinite;
+        }
+
+        #stars::after {
+            background-image: radial-gradient(#ffffff 1px, transparent 1%);
+            background-size: 50px 50px;
+        }
+
+        #stars::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -50%;
+            width: 170%;
+            height: 500%;
+            animation: animStar 60s linear infinite;
+        }
+
+        #stars::before {
+            background-image: radial-gradient(#ffffff 1px, transparent 1%);
+            background-size: 50px 50px;
+            opacity: 0.5;
+        }
+
+        @keyframes animStar {
+            from {
+                transform: translateY(0);
+            }
+
+            to {
+                transform: translateY(-135rem);
+            }
+        }
+
+        @keyframes animStarRotate {
+            from {
+                transform: rotate(360deg);
+            }
+
+            to {
+                transform: rotate(0);
+            }
+        }
+
+        @keyframes gradient_301 {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        @keyframes pulse_3011 {
+            0% {
+                transform: scale(0.75);
+                box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+            }
+
+            70% {
+                transform: scale(1);
+                box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+            }
+
+            100% {
+                transform: scale(0.75);
+                box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <div class="container1" style="background-color: black;">
+        <header class="header justify-between">
+            <img src="/images/logo.jpg" alt="Logo" class="logo text-gray-100 rounded m-2  my-auto"
+                style="height: 50px; width: 250px;" />
+            <nav class="md:ml-auto block items-center justify-center navbar pt-3">
+                <ul class="navbar-list">
+                    <a class="dropdown navbar-link text-gray-100 hover:text-gray-300 no-underline font-sixe-25 center dropdown-content-home mr-5"
+                        style="padding: 16px;" href="/">Home </a>
+                    <div class="dropdown">
+                        <button
+                            class="dropbtn navbar-link mr-10 text-gray-100 hover:text-gray-300 no-underline font-sixe-25">Explore</button>
+                        <div class="dropdown-content">
+                            <a href="/shop.html">Shop</a>
+                            <a href="/service.html">Services</a>
+                            <a href="/drones.html">Our Drones</a>
+                            <a href="/blog.html">Blogs</a>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <button
+                            class="dropbtn navbar-link mr-10 text-gray-100 hover:text-gray-300 no-underline font-sixe-25">Support</button>
+                        <div class="dropdown-content">
+                            <a href="/contact.html">Contact Us</a>
+                            <a href="/about.html">About Us</a>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <button
+                            class="dropbtn navbar-link mr-10 text-gray-100 hover:text-gray-300 no-underline font-sixe-25"><i
+                                class="fa-solid fa-user"></i></button>
+                        <div class="dropdown-content" id="dropdown-content-dynamic">
+                            <a href="/login.html">Log in</a>
+                            <a href="/signup.html">Sign Up</a>
+                            <a onclick="deleteAllCookies()" href="#">Log out</a>
+                        </div>
+                    </div>
+
+                </ul>
+            </nav>
+
+            <div class="mobile-navbar-btn">
+                <ion-icon name="menu-outline" class="mobile-nav-icon" style="color: white;"></ion-icon>
+                <ion-icon name="close-outline" class="mobile-nav-icon" style="color: white;"></ion-icon>
+            </div>
+        </header>
+    </div>
+    <div>
+        <button onclick="topFunction()" id="myBtn" title="Go to top" class="btn btn-dark"><i
+                class="fa-solid fa-up-long "></i></button>
+    </div>
+    <div class="container3 mt-4 cursor-default">
+        <button class="btn-ui width-100-margin-auto cursor-default" type="button">
+            <strong class="cursor-default text-lg">CONTACT US</strong>
+            <div id="container-stars" class="cursor-default">
+                <div class="cursor-default" id="stars"></div>
+            </div>
+
+            <div id="glow" class="cursor-default">
+                <div class="circle cursor-default"></div>
+                <div class="circle cursor-default"></div>
+            </div>
+        </button>
+    </div>
+
+    <div class="mt-10 text-center">
+        <button type="button" class="btn btn-dark dynamic_fix_js active mb-3" onclick="dynamic_address(0)"
+            id="Mumbai">Mumbai</button>
+        <button type="button" class="btn btn-dark dynamic_fix_js mb-3" onclick="dynamic_address(1)"
+            id="Chennai">Chennai</button>
+        <button type="button" class="btn btn-dark dynamic_fix_js mb-3" onclick="dynamic_address(2)"
+            id="Kolkata">Kolkata</button>
+        <button type="button" class="btn btn-dark dynamic_fix_js mb-3" onclick="dynamic_address(3)"
+            id="Bengaluru">Bengaluru</button>
+        <button type="button" class="btn btn-dark dynamic_fix_js mb-3" onclick="dynamic_address(4)"
+            id="Hyderabad">Hyderabad</button>
+        <button type="button" class="btn btn-dark dynamic_fix_js mb-3" onclick="dynamic_address(5)"
+            id="Ahmedabad">Ahmedabad</button>
+        <button type="button" class="btn btn-dark dynamic_fix_js mb-3" onclick="dynamic_address(6)"
+            id="Pune">Pune</button>
+        <button type="button" class="btn btn-dark dynamic_fix_js mb-3" onclick="dynamic_address(7)"
+            id="Lucknow">Lucknow</button>
+    </div>
+
+    <section class="text-gray-600 body-font flex flex-col lg:flex-row md:flex-row justify-center">
+        <div class="w-full flex flex-col items-center">
+            <div class=" mt-10 bg-black p-3 rounded">
+                <p class="text-2xl underline text-gray-100">Manufacturing Hub</p>
+                <p class="text-gray-400 address-1" id="dynamic-text">A-608, Crimson Business Park,<br> Vidyavihar
+                    (West),<br> Mumbai - 400001</p>
+            </div>
+        </div>
+        <div class="w-full mt-10 flex justify-center">
+            <div class=" bg-black p-3 rounded">
+                <p class="text-2xl underline text-gray-100">Corporate Office</p>
+                <p class="text-gray-400">AeroTech Drones Pvt Ltd<br>
+                    C-15, First Floor,<br>
+                    Harmony Enclave, Mumbai – 400001</p>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="w-full m-auto text-gray-400 body-font relative flex justify-center">
+        <div class="flex-col">
+            <div class="mt-5 bg-black p-3 rounded">
+                <p class="text-2xl text-gray-100 ml-10 underline">Inquiries</p>
+                <p class="text-gray-400 ml-10">For drone sale & service inquiries, <br>please email us at
+                    info@aerotech.com</p>
+            </div>
+            <form class="form mt-10 rounded p-10 mb-10" onsubmit="sendEmail(); reset(); return false;"
+                style="background-color: #000000;">
+                <div class="descr bold text-center text-3xl mb-4">Contact us</div>
+                <div class="input">
+                    <input required="" type="text" id="fullname">
+                    <label for="name">Name</label>
+                </div>
+
+                <div class="input">
+                    <input required="" name="email" type="email" id="emailid">
+                    <label for="email">E-mail</label>
+                </div>
+
+                <div class="input">
+                    <textarea required="" cols="30" rows="1" id="message"></textarea>
+                    <label for="message">Message</label>
+                </div>
+                <button class="btn btn-dark m-auto" id="submit-btn">Send message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-gray-300 body-font" style="background-color: black;">
+        <div
+            class="container px-5 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
+            <div class="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
+                <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+                    <img src="/images/logo.jpg" alt="Logo" style="height: 50px; width: 300px;" class="rounded">
+            </div>
+            <div class="flex-grow flex flex-wrap md:pl-20 -mb-10 md:mt-0 mt-10 md:text-left text-center">
+                <div class="lg:w-1/2 md:w-1/2 w-full px-4">
+                    <h2 class="title-font font-medium text-gray-100 tracking-widest w-full text-sm mb-4">OUR PAGES</h2>
+                    <nav class="list-none mb-10">
+                        <li class="mb-2">
+                            <a class="text-gray-600 hover:text-gray-500 no-underline" href="/">Home</a>
+                        </li>
+                        <li class="mb-2">
+                            <a class="text-gray-600 hover:text-gray-500 no-underline" href="/drones.html">Our Drones</a>
+                        </li>
+                        <li class="mb-2">
+                            <a class="text-gray-600 hover:text-gray-500 no-underline" href="/service.html">Services</a>
+                        </li>
+                        <li class="mb-2">
+                            <a class="text-gray-600 hover:text-gray-500 no-underline" href="/shop.html">Shop</a>
+                        </li>
+                    </nav>
+                </div>
+                <div class="lg:w-1/2 md:w-1/2 w-full px-4">
+                    <h2 class="title-font font-medium text-gray-100 tracking-widest text-sm mb-4">ABOUT US</h2>
+                    <nav class="list-none mb-10">
+                        <li class="mb-2">
+                            <a class="text-gray-600 hover:text-gray-500 no-underline" href="/blog.html">Blog</a>
+                        </li>
+                        <li class="mb-2">
+                            <a class="text-gray-600 hover:text-gray-500 no-underline" href="/contact.html">Contact
+                                Us</a>
+                        </li>
+                        <li class="mb-2">
+                            <a class="text-gray-600 hover:text-gray-500 no-underline" href="/about.html">About Us</a>
+                        </li>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
+                <p class="text-gray-500 text-sm text-center sm:text-left">© 2023 AeroTech Drones —
+                    <a rel="noopener noreferrer" class="text-gray-600 ml-1" target="_blank">@Bhavans</a>
+                </p>
+                <span class="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">
+                    <a class="text-gray-500">
+                        <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            class="w-5 h-5" viewBox="0 0 24 24">
+                            <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                        </svg>
+                    </a>
+                    <a class="ml-3 text-gray-500">
+                        <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            class="w-5 h-5" viewBox="0 0 24 24">
+                            <path
+                                d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z">
+                            </path>
+                        </svg>
+                    </a>
+                    <a class="ml-3 text-gray-500">
+                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                            <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+                        </svg>
+                    </a>
+                    <a class="ml-3 text-gray-500">
+                        <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">
+                            <path stroke="none"
+                                d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z">
+                            </path>
+                            <circle cx="4" cy="4" r="2" stroke="none"></circle>
+                        </svg>
+                    </a>
+                </span>
+            </div>
+        </div>
+    </footer>
+    <script>
+        function getCookie(cname) {
+            let name = cname + "=";
+            let decodedCookie = decodeURIComponent(document.cookie);
+            let ca = decodedCookie.split(';');
+            for (let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+        function deleteAllCookies() {
+            var cookies = document.cookie.split(";");
+            for (var i = 0; i < cookies.length; i++) {
+                var cookie = cookies[i];
+                var eqPos = cookie.indexOf("=");
+                var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+                document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
+            }
+            alert("Logged out...")
+            location.reload();
+        }
+        let email = getCookie("email");
+        if (email != "") {
+            let temp = document.getElementById("dropdown-content-dynamic");
+            // for (let i = 0; i < temp.length; i++) {
+            temp.innerHTML = `<a onclick="deleteAllCookies()" href="#">Log out</a>`;
+            // }
+            // location.reload();
+        } else {
+            let temp = document.getElementById("dropdown-content-dynamic");
+            // for (let i = 0; i < temp.length; i++) {
+            temp.innerHTML = `<a href="/login.html">Log in</a>
+                            <a href="/signup.html">Sign Up</a>`;
+            // }
+            // location.reload();
+        }
+    </script>
+    <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
+    <script>
+        window.botpressWebChat.init({
+            "composerPlaceholder": "Enter your query",
+            "botConversationDescription": "This bot is to assist you",
+            "botId": "7e237e28-b00f-4f62-8ebf-62ce53706e12",
+            "hostUrl": "https://cdn.botpress.cloud/webchat/v1",
+            "messagingUrl": "https://messaging.botpress.cloud",
+            "clientId": "7e237e28-b00f-4f62-8ebf-62ce53706e12",
+            "webhookId": "2983438f-351d-4487-b734-7107709bf126",
+            "lazySocket": true,
+            "themeName": "prism",
+            "botName": "AeroTech Drone",
+            "avatarUrl": "https://png.pngtree.com/png-vector/20230225/ourmid/pngtree-smart-chatbot-cartoon-clipart-png-image_6620453.png",
+            "stylesheet": "https://webchat-styler-css.botpress.app/prod/b4e925eb-39e8-454c-8035-70a1dee4c77a/v46270/style.css",
+            "frontendVersion": "v1",
+            "enableConversationDeletion": true,
+            "theme": "prism",
+            "themeColor": "#2563eb"
+        });
+    </script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script src="index.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script>
+        function dynamic_address(id) {
+            // let FF_FOUC_FIX;
+            let address = [
+                "A-608, Crimson Business Park,<br> Vidyavihar (West),<br> Mumbai - 400001",
+                "No.155, Vellala St,<br> Purasaiwakkam, Chennai,<br> Tamil Nadu - 600048",
+                "1/2, Chanditolla Branch Road,<br> Udayan Park, Behala,<br> Kolkata,<br> West Bengal - 700053",
+                "6A Main Rd,<br> Mahalakshmipuram Layout,<br> Mahalakshmi Layout,<br> Bengaluru, Karnataka - 560086",
+                "Shop No. :- 15 Nanal Nagar,<br> Mehdipatnam,<br> Hyderabad, Telangana 500008",
+                "Elysian Residency,<br> Near Namaste Circle<br> Shahibag, Ahmedabad,<br> Gujarat 380004",
+                "35, Bibwewadi Kondhwa Rd,<br>Gangadham Phase II,<br> Bibwewadi,<br> Pune, Maharashtra - 411040",
+                "A-70, Karbala Rd,<br> Rajajipuram, Lucknow,<br> Uttar Pradesh 226017"
+            ];
+            let button = ["Mumbai", "Chennai", "Kolkata", "Bengaluru", "Hyderabad", "Ahmedabad", "Pune", "Lucknow"];
+            document.getElementById('dynamic-text').innerHTML = address[id]
+            var element = document.getElementsByClassName("dynamic_fix_js");
+            for (i = 0; i < element.length; i++) {
+                element[i].classList.remove("active");
+            }
+            document.getElementById(button[id]).classList.add("active");
+        }
+    </script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+        function sendEmail() {
+            let msg = "The filled Information is <br><br>Name: " + document.getElementById("fullname").value + "<br>Email: " + document.getElementById("emailid").value + "<br>Message: " + document.getElementById("message").value + "<br><br><br><br><br>Verified by AeroTech Drone Pvt. Ltd.<br>Thank You.";
+            Email.send({
+                Host: "smtp.elasticemail.com",
+                Username: "jdarshan535@gmail.com",
+                Password: "5AD666C38FF8083C203B9A079C5DD5B65388",
+                To: 'jdarshan535@gmail.com',
+                From: "jdarshan535@gmail.com",
+                Subject: "New form is filled by - Check it ASAP",
+                Body: msg
+            }).then(
+                message => {
+                    if (message == 'OK') {
+                        alert("Your mail is recorded. We will contact you shortly")
+                    } else {
+                        alert(message)
+                    }
+                }
+            );
+        }
+    </script>
+
+</body>
+
+</html>
